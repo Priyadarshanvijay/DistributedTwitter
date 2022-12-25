@@ -1,0 +1,10 @@
+---
+version: 1
+grpcPort: "8081"
+signingSecret: secret
+memoryType: raft
+tokenValidityHours: 24
+etcdEndpoints:
+  - 127.0.0.1:2379
+  - 127.0.0.1:2378
+  - 127.0.0.1:2377

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package twitter;
+
+import "models.proto";
+
+option go_package = "github.com/twitter/twitter";
+
+service Twitter {
+  rpc HealthCheck(models.Empty) returns(models.Empty);
+  rpc RegisterUser(models.User) returns(models.User);
+  rpc LoginUser(models.User) returns(models.User);
+  rpc FollowUser(models.User) returns(models.Empty);
+  rpc UnFollowUser(models.User) returns(models.Empty);
+  rpc CreatePost(models.Post) returns(models.Post);
+  rpc GetFeed(models.Empty) returns(models.MultiplePosts);
+  rpc DeletePost(models.Post) returns(models.Empty);
+  rpc GetUser (models.User) returns(models.User);
+  rpc GetUserProfile (models.User) returns(models.UserProfile);
+  rpc GetSelf (models.Empty) returns(models.User);
+  rpc GetMyPosts (models.Empty) returns(models.MultiplePosts);
+  rpc GetPost (models.Post) returns(models.Post);
+}

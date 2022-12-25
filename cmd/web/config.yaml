@@ -1,0 +1,6 @@
+version: 1
+serviceGrpcPort: 8081
+serviceHostname: localhost
+hostName: localhost
+httpPort: 3000
+serviceName: Twitter

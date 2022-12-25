@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package models;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/twitter/models";
+
+message Version {
+  string version = 1;
+}
+
+message Empty {}
+
+message User {
+  string UserName = 1;
+  string UserEmail = 2;
+  string userPassword = 3;
+  repeated string Followers = 4;
+  repeated string Follows = 5;
+}
+
+message Post {
+  string PostID = 1;
+  string PostedBy = 2;
+  string Content = 3;
+  string ImageURL = 4;
+  google.protobuf.Timestamp PostedAt = 5;
+  repeated string LikedBy = 6;
+}
+
+message UserProfile {
+  User user = 1;
+  repeated Post Posts = 2;
+}
+
+message MultiplePosts {
+  repeated Post Posts = 1;
+}
